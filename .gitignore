@@ -1,0 +1,22 @@
+# Node / Bun
+node_modules/
+bun.lockb
+dist/
+build/
+
+# Local data (your JSON + test data)
+data/
+
+# Logs
+*.log
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+._*
+*.Identifier
+
+# Env files
+.env
+.env.local
+.env.*
