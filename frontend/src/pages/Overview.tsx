@@ -9,15 +9,21 @@ type Row = {
 }
 
 const SECTION_CONFIGS = {
+  cases: {
+    label: 'Number of Cases',
+    columns: [
+      { key: 'cases_count', min: 240 },
+    ],
+  },  
   age: {
     label: 'Age Groups',
     columns: [
-      { key: 'Neonate_count', min: 5 },
-      { key: '45-week PMA to 6-month PMA_count', min: 5 },
-      { key: '7 mo - 2 years_count', min: 20 },
-      { key: '3 - 6 years_count', min: 20 },
-      { key: '7 - 12 years_count', min: 20 },
-      { key: '13 - 17 years_count', min: 20 },
+      { key: 'Neonate_count', min: 25 },
+      { key: '45-week PMA to 6-month PMA_count', min: 20 },
+      { key: '7 mo - 2 years_count', min: 50 },
+      { key: '3 - 6 years_count', min: 30 },
+      { key: '7 - 12 years_count', min: 28 },
+      { key: '13 - 17 years_count', min: 15 },
     ],
   },
   asa: {
@@ -33,7 +39,7 @@ const SECTION_CONFIGS = {
     label: 'Surgical Procedures',
     columns: [
       { key: 'airway_surgery_count', min: 10 },
-      { key: 'cardiac_with_bypass_count', min: 10 },
+      { key: 'cardiac_with_bypass_count', min: 15 },
       { key: 'cardiac_without_bypass_count', min: 10 },
       { key: 'craniofacial_reconstruction_count', min: 5 },
       { key: 'neurosurgery_count', min: 10 },
@@ -50,20 +56,44 @@ const SECTION_CONFIGS = {
   airway: {
     label: 'Anesthesiology Procedures – Airways',
     columns: [
-      { key: 'direct_laryngoscopy_count', min: 200 },
-      { key: 'flexible_bronchoscopy_count', min: 5 },
-      { key: 'natural_airway_count', min: 25 },
-      { key: 'supraglottic_airway_count', min: 50 },
-      { key: 'video_laryngoscopy_count', min: 10 },
+      { key: 'direct_laryngoscopy_count', min: 50 },
+      { key: 'flexible_bronchoscopy_count', min: 10 },
+      { key: 'natural_airway_count', min: 10 },
+      { key: 'supraglottic_airway_count', min: 20 },
+      { key: 'video_laryngoscopy_count', min: 15 },
     ],
   },
   line_block: {
     label: 'Anesthesiology Procedures – Lines and Blocks',
     columns: [
-      { key: 'arterial_line_placement_count', min: 25 },
-      { key: 'central_venous_line_placement_count', min: 20 },
-      { key: 'neuraxial_block_including_intrathecal_epidural_and_caudal_count', min: 25 },
-      { key: 'regional_anesthesia_peripheral_nerve_block_count', min: 40 },
+      { key: 'arterial_line_placement_count', min: 20 },
+      { key: 'central_venous_line_placement_count', min: 10 },
+      { key: 'neuraxial_block_including_intrathecal_epidural_and_caudal_count', min: 20 },
+      { key: 'regional_anesthesia_peripheral_nerve_block_count', min: 20 },
+    ],
+  },
+  acute_pain: {
+    label: 'Anesthesiology Procedures – Acute Pain Consults',
+    columns: [
+      { key: 'acute_pain_count', min: 10 },
+    ],
+  },
+  case_characteristics: {
+  label: 'Case Characteristics',
+  columns: [
+    { key: 'neuromonitoring_count', min: 10 },
+    { key: 'remote_count', min: 20 },
+    { key: 'cardiac_count', min: 8 },
+    { key: 'high_volume_count', min: 10 },
+    { key: 'vasoactive_count', min: 15 },
+
+    ],
+  },
+advanced_airway_thoracic: {
+    label: 'Advanced Airway & Thoracic Cases',
+    columns: [
+      { key: 'single_lung_count', min: 5 },
+      { key: 'shared_airway_count', min: 10 },
     ],
   },
 }

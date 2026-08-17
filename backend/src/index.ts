@@ -20,12 +20,22 @@ function loadJson(filename: string) {
 }
 
 const datasets = {
-  age: 'trainee_age_matrix.json',
   asa: 'trainee_asa_matrix.json',
+  age: 'trainee_age_matrix.json',
   surgical: 'trainee_surgical_matrix.json',
   neonatal: 'trainee_neonatal_matrix.json',
   airway: 'trainee_airway_matrix.json',
   line_block: 'trainee_line_block_matrix.json',
+  cases: 'trainee_cases_matrix.json',
+  acute_pain: 'trainee_acute_pain_matrix.json',
+
+  neuromonitoring: 'trainee_neuromonitoring_matrix.json',
+  remote_anesthesia: 'trainee_remote_anesthesia_matrix.json',
+  cardiac: 'trainee_cardiac_matrix.json',
+  high_volume: 'trainee_high_volume_matrix.json',
+  vasoactive: 'trainee_vasoactive_matrix.json',
+  single_lung: 'trainee_single_lung_matrix.json',
+  shared_airway: 'trainee_shared_airway_matrix.json',
 }
 
 function buildMaster() {
@@ -85,6 +95,13 @@ const THRESHOLDS: Record<string, number> = {
   spinal_fusion: 5,
   neonatal_intestinal_surgery: 5,
   neonatal_surgical_cases: 5,
+  neuromonitoring: 10,
+  remote: 20,
+  cardiac: 8,
+  high_volume: 10,
+  vasoactive: 15,
+  single_lung: 5,
+  shared_airway: 10,
 }
 
 function addDerived(master: any[]) {
@@ -158,5 +175,5 @@ app.get('/api/fellow/:name', (c) => {
 serve({
   fetch: app.fetch,
   port: 3003,
-  localAddress: '0.0.0.0'
+  hostname: '0.0.0.0'
 })

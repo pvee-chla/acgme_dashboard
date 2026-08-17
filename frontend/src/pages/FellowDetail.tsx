@@ -82,7 +82,62 @@ const REQUIREMENTS: Record<string, RequirementGroup> = {
       },
     },
   },
-
+  cases: {
+    label: 'Number of Cases',
+    subcategories: {
+      'cases': {
+        label: 'Total Cases',
+        threshold: 240,
+      },
+    },
+  },
+  acute_pain: {
+    label: 'Anesthesiology Procedures – Acute Pain Consults',
+    subcategories: {
+      'acute_pain': {
+        label: 'Acute Pain Consults',
+        threshold: 10,
+      },
+    },
+  },
+  case_characteristics: {
+  label: 'Case Characteristics',
+  subcategories: {
+    neuromonitoring: {
+      label: 'Neuromonitoring',
+      threshold: 10,
+    },
+    remote: {
+      label: 'Remote Anesthesia',
+      threshold: 20,
+    },
+    cardiac: {
+      label: 'Cardiac Cases',
+      threshold: 8,
+    },
+    high_volume: {
+      label: 'High Volume Cases',
+      threshold: 10,
+    },
+    vasoactive: {
+      label: 'Vasoactive Infusions',
+      threshold: 15,
+    },
+  },
+},
+advanced_airway_thoracic: {
+  label: 'Advanced Airway & Thoracic Cases',
+  subcategories: {
+    single_lung: {
+      label: 'Single Lung Ventilation',
+      threshold: 5,
+    },
+    shared_airway: {
+      label: 'Shared Airway Cases',
+      threshold: 10,
+    },
+  },
+},
 }
 
 interface FellowDataRow {

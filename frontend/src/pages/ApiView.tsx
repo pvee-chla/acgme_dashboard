@@ -24,12 +24,12 @@ export const SECTION_CONFIGS: Record<
     description: 'Case counts by patient age category',
     icon: '',
     columns: [
-      { key: 'Neonate_count', label: 'Neonate', minReq: 5 },
-      { key: '45-week PMA to 6-month PMA_count', label: '45wk – 6mo', minReq: 5 },
-      { key: '7 mo - 2 years_count', label: '7mo – 2yr', minReq: 20 },
-      { key: '3 - 6 years_count', label: '3 – 6yr', minReq: 20 },
-      { key: '7 - 12 years_count', label: '7 – 12yr', minReq: 20 },
-      { key: '13 - 17 years_count', label: '13 – 17yr', minReq: 20 },
+      { key: 'Neonate_count', label: 'Neonate', minReq: 25 },
+      { key: '45-week PMA to 6-month PMA_count', label: '45wk – 6mo', minReq: 20 },
+      { key: '7 mo - 2 years_count', label: '7mo – 2yr', minReq: 50 },
+      { key: '3 - 6 years_count', label: '3 – 6yr', minReq: 30 },
+      { key: '7 - 12 years_count', label: '7 – 12yr', minReq: 28 },
+      { key: '13 - 17 years_count', label: '13 – 17yr', minReq: 15 },
     ],
   },
   asa: {
@@ -49,7 +49,7 @@ export const SECTION_CONFIGS: Record<
     icon: '',
     columns: [
       { key: 'airway_surgery_count', label: 'Airway', minReq: 10 },
-      { key: 'cardiac_with_bypass_count', label: 'Cardiac w/ Bypass', minReq: 10 },
+      { key: 'cardiac_with_bypass_count', label: 'Cardiac w/ Bypass', minReq: 15 },
       { key: 'cardiac_without_bypass_count', label: 'Cardiac w/o Bypass', minReq: 10 },
       { key: 'craniofacial_reconstruction_count', label: 'Craniofacial', minReq: 5 },
       { key: 'neurosurgery_count', label: 'Neurosurgery', minReq: 10 },
@@ -70,11 +70,11 @@ export const SECTION_CONFIGS: Record<
     description: 'Airway management and anesthetic airway techniques',
     icon: '',
     columns: [
-      { key: 'direct_laryngoscopy_count', label: 'Direct Laryngoscopy', minReq: 200 },
-      { key: 'flexible_bronchoscopy_count', label: 'Flexible Bronchoscopy', minReq: 5 },
-      { key: 'natural_airway_count', label: 'Natural Airway', minReq: 25 },
-      { key: 'supraglottic_airway_count', label: 'Supraglottic Airway', minReq: 50 },
-      { key: 'video_laryngoscopy_count', label: 'Video Laryngoscopy', minReq: 10 },
+      { key: 'direct_laryngoscopy_count', label: 'Direct Laryngoscopy', minReq: 50 },
+      { key: 'flexible_bronchoscopy_count', label: 'Flexible Bronchoscopy', minReq: 10 },
+      { key: 'natural_airway_count', label: 'Natural Airway', minReq: 10 },
+      { key: 'supraglottic_airway_count', label: 'Supraglottic Airway', minReq: 20 },
+      { key: 'video_laryngoscopy_count', label: 'Video Laryngoscopy', minReq: 15 },
     ],
   },
   line_block: {
@@ -85,25 +85,94 @@ export const SECTION_CONFIGS: Record<
       {
         key: 'arterial_line_placement_count',
         label: 'Arterial Line',
-        minReq: 25,
+        minReq: 20,
       },
       {
         key: 'central_venous_line_placement_count',
         label: 'Central Venous Line',
-        minReq: 20,
+        minReq: 10,
       },
       {
         key: 'neuraxial_block_including_intrathecal_epidural_and_caudal_count',
         label: 'Neuraxial Block',
-        minReq: 25,
+        minReq: 20,
       },
       {
         key: 'regional_anesthesia_peripheral_nerve_block_count',
         label: 'Peripheral Nerve Block',
-        minReq: 40,
+        minReq: 20,
       },
     ],
   },
+  cases: {
+    label: 'Number of Cases',
+    description: 'Total anesthesiology cases performed',
+    icon: '',
+    columns: [
+      { key: 'cases_count', label: 'Total Cases', minReq: 240 },
+    ],
+  }, 
+  acute_pain: {
+    label: 'Anesthesiology Procedures – Acute Pain Consults',
+    description: 'Inpatient acute pain consults and management',
+    icon: '',
+    columns: [
+      {
+        key: 'acute_pain_count',
+        label: 'Acute Pain Consults',
+        minReq: 10,
+      },
+    ],
+  },
+case_characteristics: {
+  label: 'Case Characteristics',
+  description: 'Advanced case characteristic requirements',
+  icon: '',
+  columns: [
+    {
+      key: 'neuromonitoring_count',
+      label: 'Neuromonitoring',
+      minReq: 10,
+    },
+    {
+      key: 'remote_count',
+      label: 'Remote Anesthesia',
+      minReq: 20,
+    },
+    {
+      key: 'cardiac_count',
+      label: 'Cardiac Cases',
+      minReq: 8,
+    },
+    {
+      key: 'high_volume_count',
+      label: 'High Volume Cases',
+      minReq: 10,
+    },
+    {
+      key: 'vasoactive_count',
+      label: 'Vasoactive Infusions',
+      minReq: 15,
+    },
+  ],
+},
+advanced_airway_thoracic: {
+  label: 'Advanced Airway & Thoracic Cases',
+  description: 'Specialized airway and thoracic exposure requirements',
+  icon: '',
+  columns: [
+    {
+      key: 'single_lung_count',
+      label: 'Single Lung Ventilation',
+      minReq: 5,
+    },
+    {
+      key: 'shared_airway_count',
+      label: 'Shared Airway Cases',
+      minReq: 10,
+    },
+  ],
+},
 }
 
 function friendlyName(name: string): string {
